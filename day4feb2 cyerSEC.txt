@@ -41,7 +41,7 @@ CONFIG T
 no logging console
 Int Gi 2
 no shut
-ip add 192.168.102.5 255.255.255.0
+ip add 192.168.108.5 255.255.255.0
 @telnet use secureCRT: telnet 192.168.108.5
 in SEcureCRT, Paste This:
 config t
@@ -50,7 +50,7 @@ ip name-server 8.8.8.8
 ip domain-lookup
 int gi 1
 no shut
-ip add 192.168.108.5 255.255.255.0
+ip add 192.168.101.5 255.255.255.0
 int gi 3
 no shut
 ip add 192.168.103.5 255.255.255.0
@@ -86,6 +86,7 @@ DENY 10.21.0.0 0.0.255.255
 DENY 10.31.0.0 0.0.255.255
 DENY 10.41.0.0 0.0.255.255
 DENY 10.51.0.0 0.0.255.255
+DENY 10.61.0.0 0.0.255.255
 DENY 10.61.0.0 0.0.255.255
 Permit Any
 Int Gi 0/0/1
