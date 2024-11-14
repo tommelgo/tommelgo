@@ -307,7 +307,6 @@ EX.5 CREATE A FIREWALL POLICY NAMED "LASTFWP2" TO OPEN
 WWW.WEB8.COM HAS http, https as Open = 
 WWW.WEB9.COM HAS telnet, ssh, dns as Open: = 
 if you canNOT make the Policy, you work in Jollibee.
-
 config t
 no ip access-list extended LASTFWP2
 ip access-list extended LASTFWP2
@@ -359,16 +358,16 @@ STEP2: create Access-list to permit IP of Inside:
 STEP3: create a NAT pool with overload
 @vpnPH:
 config t
-int gi 1
-ip nat OUTSIDE
 int gi 2
+ip nat OUTSIDE
+int gi 1
 ip nat INSIDE
 int gi 3
 ip nat INSIDE
 no access-list 7
-access-list 7 permit 192.168.102.0 0.0.0.255
+access-list 7 permit 192.168.101.0 0.0.0.255
 access-list 7 permit 192.168.103.0 0.0.0.255
-ip nat inside source list 7 interface Gi 1 overload
+ip nat inside source list 7 interface Gi 2 overload
 ip nat inside source static 192.168.103.11 192.168.108.69
 ip nat inside source static 192.168.103.12 192.168.108.88
 end
