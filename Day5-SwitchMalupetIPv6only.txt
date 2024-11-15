@@ -146,7 +146,7 @@ How to jailBreak forgotten Password:
 
 !@@@CORE SWITCH SA TAAS
 config t
-   hostname COREtaas_
+   hostname COREtaas42
    enable secret pass
    service password-encryption
    no logging console
